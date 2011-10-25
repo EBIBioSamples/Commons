@@ -3,4 +3,7 @@
 .settings
 test
 lib
-/buildlib
+buildlib
+
+#maven compilation location
+target
