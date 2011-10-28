@@ -1,9 +1,2 @@
-.classpath
-.project
-.settings
-test
-lib
-buildlib
-
 #maven compilation location
 target
