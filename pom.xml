@@ -7,15 +7,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Commons</name>
   <url>https://github.com/mikegostev/Commons</url>
-  
-    <repositories>
-        <repository>
-          <id>maven2-repository.dev.java.net</id>
-          <name>Java.net Repository for Maven</name>
-          <url>http://download.java.net/maven/2/</url>
-          <layout>default</layout>
-        </repository>
-      </repositories>
       
   <dependencies>
     <dependency>
@@ -45,5 +36,51 @@
         </configuration>
       </plugin>
     </plugins>
+  
+    <extensions>
+	    <extension>
+	      <groupId>org.apache.maven.wagon</groupId>
+	      <artifactId>wagon-ssh</artifactId>
+	      <version>1.0-beta-6</version>
+	    </extension>
+    </extensions>    
+  
   </build>
+  
+  
+  <repositories>
+  
+  
+		<repository>
+			<id>ebi-repo</id>
+			<name>EBI repo</name>
+			<url>http://www.ebi.ac.uk/~maven/m2repo</url>
+		</repository>
+
+	  <repository>
+      <id>maven2-repository.dev.java.net</id>
+      <name>Java.net Repository for Maven</name>
+      <url>http://download.java.net/maven/2/</url>
+      <layout>default</layout>
+    </repository>
+
+  </repositories>
+  
+  <distributionManagement>
+
+	  <repository>
+		  <id>ebi-repo</id>
+		  <name>EBI Repository</name>
+		  <url>scp://parrot.ebi.ac.uk/homes/maven/public_html/m2repo</url>
+	  </repository>
+		
+	  <snapshotRepository>
+		  <uniqueVersion>false</uniqueVersion>
+		  <id>ebi-repo-snapshots</id>
+		  <name>EBI Snapshots Repository</name>
+		  <url>scp://parrot.ebi.ac.uk/homes/maven/public_html/m2repo_snapshots</url>
+	  </snapshotRepository>
+	
+  </distributionManagement>
+  
 </project>
